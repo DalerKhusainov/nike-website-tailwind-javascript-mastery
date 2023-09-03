@@ -1,38 +1,21 @@
-"use client";
 // NEXTJS HOOKS
 import Image from "next/image";
 
 interface IShoeCardProps {
-  imgUrl: any;
-  changeBigShoeImage: (shoe: string) => void;
-  bigShoeImg: any;
+  shoeURL: string;
+  isSelectedShoe: boolean;
 }
-[];
 
-const ShoeCard = ({
-  imgUrl,
-  changeBigShoeImage,
-  bigShoeImg,
-}: IShoeCardProps) => {
-  // CLICK HANDLER FUNCTION
-  const handleClick = () => {
-    if (bigShoeImg !== imgUrl.bigShoe) {
-      changeBigShoeImage(imgUrl.bigShoe);
-    }
-  };
-
+const ShoeCard = ({ shoeURL, isSelectedShoe }: IShoeCardProps) => {
   return (
     <div
-      onClick={handleClick}
-      className={`border-2 rounded-xl ${
-        bigShoeImg === imgUrl.bigShoe
-          ? "border-coral-red"
-          : "border-transparent"
-      } cursor-pointer max-sm:flex-1`}
+      className={`${
+        isSelectedShoe ? "border-coral-red" : "border-transparent"
+      } border-2 rounded-xl cursor-pointer max-sm:flex-1`}
     >
       <div className="flex justify-center items-center bg-card bg-center bg-cover sm:w-40 sm:h-40 rounded-xl max-sm:p-4">
         <Image
-          src={imgUrl.thumbnail}
+          src={shoeURL}
           alt="Shoe collection"
           width={127}
           height={103.34}

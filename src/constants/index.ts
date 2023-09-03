@@ -1,4 +1,14 @@
 import {
+  IServices,
+  IProducts,
+  IStatistics,
+  INavLinks,
+  IReviews,
+  IFooterLinks,
+  ISocialMedia,
+} from "@/modules/types";
+
+import {
   facebook,
   instagram,
   shieldTick,
@@ -6,6 +16,7 @@ import {
   truckFast,
   twitter,
 } from "../../public/icons";
+
 import {
   bigShoe1,
   bigShoe2,
@@ -21,7 +32,7 @@ import {
   thumbnailShoe3,
 } from "../../public/images";
 
-export const navLinks = [
+export const navLinks: INavLinks[] = [
   { href: "#home", label: "Home" },
   { href: "#about-us", label: "About Us" },
   { href: "#products", label: "Products" },
@@ -43,13 +54,13 @@ export const shoes = [
   },
 ];
 
-export const statistics = [
+export const statistics: IStatistics[] = [
   { value: "1k+", label: "Brands" },
   { value: "500+", label: "Shops" },
   { value: "250k+", label: "Customers" },
 ];
 
-export const products = [
+export const products: IProducts[] = [
   {
     imgURL: shoe4,
     name: "Nike Air Jordan-01",
@@ -72,7 +83,7 @@ export const products = [
   },
 ];
 
-export const services = [
+export const services: IServices[] = [
   {
     imgURL: truckFast,
     label: "Free shipping",
@@ -91,7 +102,7 @@ export const services = [
   },
 ];
 
-export const reviews = [
+export const reviews: IReviews[] = [
   {
     imgURL: customer1,
     customerName: "Morich Brown",
@@ -108,7 +119,7 @@ export const reviews = [
   },
 ];
 
-export const footerLinks = [
+export const footerLinks: IFooterLinks[] = [
   {
     title: "Products",
     links: [
@@ -139,7 +150,7 @@ export const footerLinks = [
   },
 ];
 
-export const socialMedia = [
+export const socialMedia: ISocialMedia[] = [
   { src: facebook, alt: "facebook logo" },
   { src: twitter, alt: "twitter logo" },
   { src: instagram, alt: "instagram logo" },
