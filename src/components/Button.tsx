@@ -8,6 +8,7 @@ interface ButtonProps {
   backgroundColor?: string;
   borderColor?: string;
   textColor?: string;
+  isFullWidth?: boolean;
 }
 
 const Button = ({
@@ -16,10 +17,13 @@ const Button = ({
   backgroundColor,
   borderColor,
   textColor,
+  isFullWidth = false,
 }: ButtonProps) => {
   return (
     <button
-      className={`flex justify-center items-center gap-2 px-7 py-4 border font-montserrat text-lg leading-none ${
+      className={`${
+        isFullWidth && "w-full"
+      } flex justify-center items-center gap-2 px-7 py-4 border font-montserrat text-lg leading-none ${
         backgroundColor ? backgroundColor : "bg-coral-red"
       } rounded-full ${textColor ? textColor : "text-white"} ${
         borderColor ? borderColor : "border-coral-red"
